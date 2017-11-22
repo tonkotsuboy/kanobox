@@ -1,4 +1,4 @@
-import {Sub} from './sub.js'
+import {Sub} from './sub.js';
 
 const sub = new Sub();
 sub.subMethod();
