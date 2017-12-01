@@ -1,0 +1,105 @@
+
+body {
+  font-feature-settings: "ss02";
+}
+
+.container {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation-name: rotate2;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  width: 420px;
+  height: 420px;
+}
+
+
+.origin, .origin div {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+
+.origin {
+  position: absolute;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+}
+
+.origin:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.origin:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.origin:nth-child(3) {
+  bottom: 0;
+  right: 0;
+}
+.origin:nth-child(4) {
+  bottom: 0;
+  left: 0;
+}
+
+.origin div {
+  position: absolute;
+  animation-name: rotate2;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  line-height: 1;
+  font-size: 100px;
+  text-align: center;
+}
+
+.origin div:nth-child(1) {
+  top: -50px;
+  left: -50px;
+}
+.origin div:nth-child(2) {
+  top: -50px;
+  right: -50px;
+
+}
+.origin div:nth-child(3) {
+  bottom: -50px;
+  right: -50px;
+}
+
+.origin div:nth-child(4) {
+  bottom: -50px;
+  left: -50px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
