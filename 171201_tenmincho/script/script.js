@@ -1,7 +1,27 @@
-showMarten('.marten1', 65324);
-showMarten('.marten2', 65327);
-showMarten('.marten3', 65334);
-showMarten('.marten4', 65317);
+showMarten1('.marten1');
+showMarten2('.marten2');
+showMarten3('.marten3');
+showMarten4('.marten4');
+
+/** 貂1を表示 */
+function showMarten1(target) {
+  showMarten(target, 65324);
+}
+
+/** 貂2を表示 */
+function showMarten2(target) {
+  showMarten(target, 65327);
+}
+
+/** 貂3を表示 */
+function showMarten3(target) {
+  showMarten(target, 65334);
+}
+
+/** 貂4を表示 */
+function showMarten4(target) {
+  showMarten(target, 65317);
+}
 
 /**
  * 指定のセレクタにユニコードから生成した文字を表示する
