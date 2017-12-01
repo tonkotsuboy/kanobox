@@ -1,4 +1,8 @@
 
+body {
+  font-feature-settings: "ss02";
+}
+
 .special {
   font-size: 80px;
 }

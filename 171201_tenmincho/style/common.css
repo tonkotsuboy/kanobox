@@ -10,7 +10,6 @@ html, body {
 }
 
 body {
-  font-feature-settings: "ss02";
   font-size: 40px;
   font-family: "ten-mincho", serif;
   color: #c7a90e;
@@ -20,8 +19,4 @@ body {
   align-items: center;
 }
 
-h1 {
-  font-size : 60px;
-  font-weight: normal;
-}
 
