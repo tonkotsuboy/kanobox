@@ -24,9 +24,7 @@ function showMarten4(target) {
 }
 
 /**
- * 指定のセレクタにユニコードから生成した文字を表示する
- * @param targetSelector
- * @param uniCode
+ * 指定のセレクタにUnicodeから生成した文字を挿入する
  */
 function showMarten(targetSelector, uniCode) {
   document.querySelectorAll(targetSelector).forEach(element => {
