@@ -1,0 +1,18 @@
+{
+  "name": "typescript-compile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html -p 1235"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/easeljs": "^1.0.0",
+    "node-sass": "^4.7.2",
+    "parcel-bundler": "^1.2.0",
+    "typescript": "^2.6.2"
+  }
+}
