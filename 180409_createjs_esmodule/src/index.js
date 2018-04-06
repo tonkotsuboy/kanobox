@@ -1,6 +1,7 @@
-import Stage from '@createjs/easeljs/src/display/Stage';
-import Shape from '@createjs/easeljs/src/display/Shape';
-import Tween from '@createjs/tweenjs/src/Tween';
+// EaselJS系の読み込み
+import { Shape, Stage } from '@createjs/easeljs/dist/easeljs.module';
+// TweenJS系の読み込み
+import { Tween } from '@createjs/tweenjs/dist/tweenjs.module';
 
 const stage = new Stage('myCanvas');
 
