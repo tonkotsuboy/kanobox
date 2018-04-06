@@ -1,0 +1,20 @@
+{
+  "name": "180409_createjs_esmodule",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "dependencies": {
+    "@createjs/easeljs": "^2.0.0-beta.2",
+    "@createjs/tweenjs": "^2.0.0-beta.1"
+  }
+}
