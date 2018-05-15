@@ -21,7 +21,7 @@ body {
   gap: 10px;
   -ms-grid-rows: 50px 10px 1fr 10px 50px;
   -ms-grid-columns: 200px 10px 1fr;
-  grid-template:
+      grid-template:
     "header header" 50px
     "aside  main"   1fr
     "footer footer" 50px /
