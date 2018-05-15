@@ -1,0 +1,47 @@
+html, body {
+  height: 100%;
+}
+
+header, aside, main, footer {
+  display: block;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header header" 50px
+    "aside  main"   1fr
+    "footer footer" 50px /
+     200px  1fr;
+}
+
+header {
+  background: #3498db;
+  grid-area: header;
+}
+
+aside {
+  background: #e67e22;
+  grid-area: aside;
+}
+
+main {
+  background: #2ecc71;
+  grid-area: main;
+}
+
+footer {
+  background: #95a5a6;
+  grid-area: footer;
+}
+
+

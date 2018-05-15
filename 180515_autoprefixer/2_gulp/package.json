@@ -1,0 +1,15 @@
+{
+  "name": "autoprefixer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.1",
+    "autoprefixer": "^8.5.0",
+    "postcss-gap-properties": "^1.0.0"
+  }
+}
