@@ -118,7 +118,7 @@ var data = {
 console.log((_data$user = data.user) === null || _data$user === void 0 ? void 0 : (_data$user$address = _data$user.address) === null || _data$user$address === void 0 ? void 0 : _data$user$address.street); // 福岡県
 
 console.log((_data$user2 = data.user) === null || _data$user2 === void 0 ? void 0 : (_data$user2$hoge = _data$user2.hoge) === null || _data$user2$hoge === void 0 ? void 0 : _data$user2$hoge.street); // undefined
-// Nullish coalescing
+// Nullish Coalescing
 
 console.log((_undefined = undefined) !== null && _undefined !== void 0 ? _undefined : "NO DATA"); // NO DATA
 
@@ -130,7 +130,8 @@ var foo = function foo(num) {
 
 var bar = function bar(num) {
   return "".concat(num, "\u5186");
-};
+}; // Pipeline Operator
+
 
 var result = (_ref = (_2 = 100, foo(_2)), bar(_ref));
 console.log(result);
