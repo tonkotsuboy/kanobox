@@ -1,0 +1,64 @@
+.wrap {
+  border: 1px solid #575757;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 200px;
+  box-sizing: border-box;
+  border: 1px solid #e87070;
+
+}
+
+/* 3カラム */
+.container.column3 {
+  &::after {
+    content: "";
+    display: block;
+    width: 30%;
+  }
+
+  .box {
+    width: 32%;
+  }
+}
+
+/* 4カラム */
+.container.column4 {
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    width: 24%;
+  }
+
+  &::before {
+    order: 1;
+  }
+
+  .box {
+    width: 24%;
+  }
+}
+
+/* 5カラム
+ HTMLコード側では、
+ 5の倍数になるように透明BOX div.invisibleが追加されている
+ */
+.column5 {
+  .box {
+    width: 19%;
+    &.invisible {
+      visibility: hidden;
+    }
+  }
+}

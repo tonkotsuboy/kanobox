@@ -1,0 +1,38 @@
+.wrap {
+  border: 1px solid #575757;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  margin: 10px;
+  height: 200px;
+  box-sizing: border-box;
+  border: 1px solid #e87070;
+}
+
+/* 3カラム */
+.column3 {
+  .box {
+    width: calc(100% / 3 - 20px);
+  }
+}
+
+/* 4カラム */
+.column4 {
+  .box {
+    width: calc(100% / 4 - 20px);
+  }
+}
+
+/* 5カラム */
+.column5 {
+  .box {
+    width: calc(100% / 5 - 20px);
+  }
+}
