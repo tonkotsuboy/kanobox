@@ -1,0 +1,33 @@
+body {
+  padding: 10px;
+}
+
+@font-face {
+  font-family: 'SourceHanSansJP VF';
+  src: url('SourceHanSansJP-VF.otf') format('woff2-variations');
+  font-weight: 300 900;
+  font-stretch: 75% 150%;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font: 1.2em "SourceHanSansJP VF", serif;
+}
+
+:root {
+  --text-wght: 375;
+  --text-wdth: 100;
+  --text-opsz: 16;
+  --text-GRAD: 88;
+}
+
+p {
+  font-size: 2rem;
+  font-variation-settings: 'wght' var(--text-wght), 'wdth' var(--text-wdth), 'opsz' var(--text-opsz), 'GRAD' var(--text-GRAD);
+}
+
+p.license {
+  text-align: center;
+  font-size: 1rem;
+}
