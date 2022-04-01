@@ -7,9 +7,3 @@ bodymovin.loadAnimation({
   // レンダラーのタイプ
   renderer: "svg",
 });
-
-// // 再生が完了したときの処理
-// animation.addEventListener("loopComplete", () => {
-//   // index2.htmlに遷移する
-//   location.href = "index2.html";
-// });
