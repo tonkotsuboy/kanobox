@@ -1,0 +1,8 @@
+h1 {
+  color: var(--primary-color);
+}
+
+.box {
+  width: 300px;
+  align-self: center;
+}

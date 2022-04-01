@@ -1,0 +1,16 @@
+html,
+body {
+  background-color: var(--primary-color);
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  align-self: center;
+}
+
+a {
+  color: white;
+}
