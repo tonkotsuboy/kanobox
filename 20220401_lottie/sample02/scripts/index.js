@@ -5,10 +5,12 @@ const animation = bodymovin.loadAnimation({
   path: "assets/box-open.json",
   // レンダラーのタイプ
   renderer: "svg",
+  // ループをしない
+  loop: false,
 });
 
 // 再生が完了したときの処理
-animation.addEventListener("loopComplete", () => {
+animation.addEventListener("complete", () => {
   // index2.htmlに遷移する
   location.href = "index2.html";
 });
