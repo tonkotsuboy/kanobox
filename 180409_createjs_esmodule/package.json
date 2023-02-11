@@ -11,7 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "@createjs/easeljs": "^2.0.0-beta.2",
