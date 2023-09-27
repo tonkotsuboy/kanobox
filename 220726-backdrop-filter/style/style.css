@@ -1,0 +1,44 @@
+html, body {
+  height: 100%;
+}
+main {
+  height: 100%;
+  background-image: url(../bg.jpeg);
+  background-size: cover;
+
+  display: grid;
+  place-items: center;
+}
+
+.dialog {
+  width: 600px;
+  height: 100px;
+  background-color: #fff;
+  backdrop-filter: blur(120px);
+}
+
+.container {
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.container {
+  display: grid;
+  place-content: center;
+}
+
+.box {
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+}
+
+
