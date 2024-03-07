@@ -1,0 +1,29 @@
+
+.face {
+    animation: shake 1s steps(2, end) infinite;
+}
+
+@keyframes shake {
+    0% {
+        scale: 1 1;
+    }
+    100% {
+        scale: -3 1;
+    }
+}
+
+
+
+/* その他のスタイル */
+body {
+    display: grid;
+    place-items: center;
+    height: 100dvh;
+}
+
+.face {
+    font-size: 80px;
+    cursor: pointer;
+}
+
+/* 震えたくて震えたくて震える */
