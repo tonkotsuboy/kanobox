@@ -1,29 +1,30 @@
 
 .face {
-    animation: shake 1s steps(2, end) infinite;
+  animation: shake 1s steps(2, end) infinite;
 }
 
 @keyframes shake {
-    0% {
-        scale: 1 1;
-    }
-    100% {
-        scale: -3 1;
-    }
+  0% {
+    scale: 1 1;
+  }
+  100% {
+    scale: -3 1;
+  }
 }
-
 
 
 /* その他のスタイル */
 body {
-    display: grid;
-    place-items: center;
-    height: 100dvh;
+  display: grid;
+  height: 100dvh;
+  place-items: center;
+  place-content: center;
+  font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 .face {
-    font-size: 80px;
-    cursor: pointer;
+  font-size: 80px;
+  cursor: pointer;
 }
 
 /* 震えたくて震えたくて震える */
