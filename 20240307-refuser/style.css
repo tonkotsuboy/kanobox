@@ -14,6 +14,10 @@
 
 
 /* その他のスタイル */
+html, body {
+  background-color: #fff;
+}
+
 body {
   display: grid;
   height: 100dvh;
