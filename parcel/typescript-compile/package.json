@@ -11,7 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/easeljs": "^1.0.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^7.0.0",
     "parcel-bundler": "^1.2.0",
     "typescript": "^2.6.2"
   }
