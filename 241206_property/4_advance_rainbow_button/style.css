@@ -1,0 +1,95 @@
+.rainbow-button {
+  border: none;
+  background: conic-gradient(
+    hsl(0, 99%, 57%) 0%,
+    hsl(90, 99%, 57%) 25%,
+    hsl(180, 99%, 57%) 50%,
+    hsl(270, 99%, 57%) 75%,
+    hsl(360, 99%, 57%) 100%
+  );
+}
+
+.rainbow-border-button {
+  color: white;
+  border: 6px solid transparent;
+  background-image: linear-gradient(navy, navy),
+    conic-gradient(
+    hsl(0, 99%, 57%) 0%,
+    hsl(90, 99%, 57%) 25%,
+    hsl(180, 99%, 57%) 50%,
+    hsl(270, 99%, 57%) 75%,
+    hsl(360, 99%, 57%) 100%
+  );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+.rainbow-button-animation {
+  animation: 2s gradient-angle infinite linear;
+  border: none;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    hsl(0, 99%, 57%) 0%,
+    hsl(90, 99%, 57%) 25%,
+    hsl(180, 99%, 57%) 50%,
+    hsl(270, 99%, 57%) 75%,
+    hsl(360, 99%, 57%) 100%
+  );
+}
+
+.rainbow-border-animation {
+  animation: 2s gradient-angle infinite linear;
+  color: white;
+  border: 6px solid transparent;
+  background-image: linear-gradient(navy, navy),
+    conic-gradient(
+    from var(--gradient-angle),
+    hsl(0, 99%, 57%) 0%,
+    hsl(90, 99%, 57%) 25%,
+    hsl(180, 99%, 57%) 50%,
+    hsl(270, 99%, 57%) 75%,
+    hsl(360, 99%, 57%) 100%
+  );
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+
+/* その他のスタイル */
+
+
+body {
+  font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.6;
+  padding: 24px;
+  color: #000000;
+  gap: 24px;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+button {
+  font-size: 20px;
+  font-weight: bold;
+  width: 300px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: 99999px;
+  background: none;
+}
+

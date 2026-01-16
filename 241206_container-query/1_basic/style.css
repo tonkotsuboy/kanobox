@@ -1,0 +1,16 @@
+.container {
+  overflow: auto;
+  width: 240px;
+  min-width: 240px;
+  /* 要素をリサイズ可能にする設定 */
+  resize: horizontal;
+  border: dotted 1px #aba6a6;
+  container-type: inline-size;
+}
+
+@container (min-width: 300px) {
+  p {
+    color: #f4481a;
+    font-weight: bold;
+  }
+}

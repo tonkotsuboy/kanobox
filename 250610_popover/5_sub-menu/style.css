@@ -1,0 +1,145 @@
+/* サブメニューがある項目に矢印アイコンを表示 */
+.menu-item:has(.submenu) > .menu-link::after {
+  /*  矢印アイコン用スタイル */
+  font-family: "Material Icons";
+  font-size: 1.5rem;
+  margin-left: auto;
+  content: "chevron_right";
+  color: #666;
+}
+
+.menu-item:has(.submenu) > .menu-link::after {
+  font-family: "Material Icons"; /* Material Iconsフォント指定 */
+  font-size: 1.5rem;
+  margin-left: auto; /* テキストとアイコンを分離 */
+  content: "chevron_right"; /* 三角アイコン */
+  color: #666; /* アイコン色 */
+}
+
+/* ベーススタイル */
+body,
+html {
+  font-family: "Arial", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex; /* 横並び配置 */
+  height: 100vh; /* 画面の高さに合わせる */
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* メニュー幅 */
+  border-right: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-link {
+  font-weight: bold;
+  display: flex; /* アイコンとテキストを横並びに */
+  align-items: center;
+  padding: 1rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-link .material-icons {
+  font-size: 1.5rem;
+  margin-right: 10px; /* アイコンとテキストの間隔 */
+  color: #666; /* アイコン色 */
+}
+
+.menu-link:is(:hover, :focus) {
+  color: #0078d4;
+  background-color: #f0f0f0;
+
+  .material-icons {
+    color: currentColor; /* ホバー時のアイコン色変更 */
+  }
+}
+
+.menu-item:has(.submenu) > .menu-link:is(:hover, :focus)::after {
+  color: #0078d4;
+}
+
+/* サブメニュー */
+.submenu {
+  min-width: 200px;
+  margin: 0;
+  padding: 0.5rem; /* Add some padding */
+  list-style: none;
+  border: 1px solid #e2e8f0;
+  background-color: #fff;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+  /* Anchor positioning requires an explicit position */
+  position: absolute;
+
+  /* Anchor Positioning */
+  position-anchor: --task-menu;
+  top: anchor(--task-menu top);
+  left: anchor(--task-menu right);
+  margin-left: 0.75rem; /* Add some space */
+}
+
+.submenu-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: #333;
+  border-radius: 6px; /* Rounded links */
+}
+
+.submenu-link:hover,
+.submenu-link:focus {
+  color: #0078d4;
+  background-color: #f0f8ff;
+}
+
+/* メインコンテンツエリア */
+.main-content {
+  display: flex;
+  align-items: center;
+  flex: 1; /* メインコンテンツをメニュー以外の幅に */
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.main-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-link:hover .material-icons,
+.menu-link:focus .material-icons {
+  color: #0078d4;
+}
+
+#task-menu-anchor {
+  anchor-name: --task-menu;
+}

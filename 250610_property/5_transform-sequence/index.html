@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トランスフォーム シーケンス - @property Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Transform Sequence Animation</h1>
+    <p class="subtitle">@propertyで複雑なトランスフォームを数値でコントロール</p>
+    
+    <section class="demo-section">
+      <h2>スケール + 回転の連続アニメーション</h2>
+      <div class="transform-demo">
+        <div class="scale-rotate-box">
+          <div class="content">Scale + Rotate</div>
+        </div>
+      </div>
+      <p>スケールと回転を独立してアニメーション</p>
+    </section>
+
+    <section class="demo-section">
+      <h2>3D回転アニメーション</h2>
+      <div class="transform-demo">
+        <div class="rotation-3d-box">
+          <div class="content">3D Rotation</div>
+        </div>
+      </div>
+      <p>X, Y, Z軸の回転を同時にアニメーション</p>
+    </section>
+
+    <section class="demo-section">
+      <h2>カスタムイージングアニメーション</h2>
+      <div class="transform-demo">
+        <div class="custom-easing-box">
+          <div class="content">Custom Easing</div>
+        </div>
+      </div>
+      <p>数値の変化に独自のイージングを適用</p>
+    </section>
+
+    <section class="demo-section">
+      <h2>フィルター値のアニメーション</h2>
+      <div class="transform-demo">
+        <div class="filter-box">
+          <div class="content">Filter Animation</div>
+        </div>
+      </div>
+      <p>blur, brightness, contrastを数値でアニメーション</p>
+    </section>
+  </div>
+</body>
+</html>

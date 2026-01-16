@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Inquiry</title>
+    <link href="./style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="app">
+      <div class="app-inner">
+        <nav class="menu">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                <span class="material-icons">dashboard</span>
+                ダッシュボード
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                <span class="material-icons">folder</span>
+                プロジェクト
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                <span class="material-icons">task</span>
+                タスク管理
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                <span class="material-icons">settings</span>
+                設定
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                <span class="material-icons">email</span>
+                問い合わせ
+              </a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#">
+                <span class="material-icons">logout</span>
+                ログアウト
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button
+          class="btn-hamburger"
+          popovertarget="side-navigation"
+          popovertargetaction="show"
+        >
+          <span class="rectangle-1"></span>
+          <span class="rectangle-2"></span>
+          <span class="rectangle-3"></span>
+        </button>
+        <!--  コンテナの基準   -->
+        <div class="form-wrapper">
+          <form>
+            <div class="item">
+              <label class="required" for="name">氏名 </label>
+              <div class="input-wrapper">
+                <input id="name" required type="text"/>
+              </div>
+            </div>
+            <div class="item">
+              <label class="optional" for="company">会社</label>
+              <div class="input-wrapper">
+                <input id="company" type="text" />
+              </div>
+            </div>
+            <div class="item">
+              <label class="required" for="mailaddress">メールアドレス </label>
+              <div class="input-wrapper">
+                <input id="mailaddress" required type="email"/>
+              </div>
+            </div>
+            <button class="submit-button" type="button">送信する</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap"
+      rel="stylesheet"
+    />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Cats Lis</title>
+    <link href="./style.css" rel="stylesheet"/>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <h1>Cats List</h1>
+
+      <!--  性別用selectbox-->
+      <select>
+        <option value="all">全て</option>
+        <option value="male">男の子</option>
+        <option value="female">女の子</option>
+      </select>
+      <main>
+        <table>
+          <thead>
+            <tr>
+              <th>猫の名前</th>
+              <th>性別</th>
+              <th>誕生日</th>
+              <th>種類</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-type="female">
+              <td>チャチャ</td>
+              <td><span class="gender">女の子</span></td>
+              <td>2022/11/14</td>
+              <td>マンチカン</td>
+            </tr>
+            <tr data-type="male">
+              <td>ウニ</td>
+              <td><span class="gender">男の子</span></td>
+              <td>2021/08/11</td>
+              <td>ハチワレ</td>
+            </tr>
+            <tr data-type="female">
+              <td>ミケ</td>
+              <td><span class="gender">女の子</span></td>
+              <td>2022/03/29</td>
+              <td>三毛</td>
+            </tr>
+            <tr data-type="male">
+              <td>テト</td>
+              <td><span class="gender">男の子</span></td>
+              <td>2023/08/03</td>
+              <td>トラ</td>
+            </tr>
+            <tr data-type="male">
+              <td>レオン</td>
+              <td><span class="gender">男の子</span></td>
+              <td>2024/05/18</td>
+              <td>ハチワレ</td>
+            </tr>
+            <tr data-type="female">
+              <td>ルナ</td>
+              <td><span class="gender">女の子</span></td>
+              <td>2020/02/24</td>
+              <td>ロシアンブルー</td>
+            </tr>
+            <tr data-type="male">
+              <td>オリバー</td>
+              <td><span class="gender">男の子</span></td>
+              <td>2020/08/23</td>
+              <td>トラ</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>

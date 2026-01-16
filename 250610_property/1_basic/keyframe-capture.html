@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虹色ボーダーアニメーション - キーフレーム表示</title>
+    <style>
+        @property --gradient-angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        body {
+            font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+                "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            padding: 40px;
+            background: white;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .keyframe-item {
+            display: grid;
+            place-items: center;
+            gap: 20px;
+            padding: 40px;
+            background: white;
+            border-radius: 16px;
+        }
+
+        .keyframe-button {
+            width: 300px;
+            height: 80px;
+            border: 6px solid transparent;
+            border-radius: 99999px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(navy, navy) padding-box,
+                conic-gradient(
+                    from var(--gradient-angle),
+                    hsl(0, 99%, 57%) 0%,
+                    hsl(90, 99%, 57%) 25%,
+                    hsl(180, 99%, 57%) 50%,
+                    hsl(270, 99%, 57%) 75%,
+                    hsl(360, 99%, 57%) 100%
+                ) border-box;
+        }
+
+        .keyframe-0 {
+            --gradient-angle: 0deg;
+        }
+
+        .keyframe-90 {
+            --gradient-angle: 90deg;
+        }
+
+        .keyframe-180 {
+            --gradient-angle: 180deg;
+        }
+
+        .keyframe-270 {
+            --gradient-angle: 270deg;
+        }
+
+        .keyframe-label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .angle-display {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: #666;
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>虹色ボーダーアニメーション - キーフレーム表示</h1>
+    
+    <div class="container">
+        <div class="keyframe-item">
+            <div class="keyframe-label">開始時点 (0%)</div>
+            <button class="keyframe-button keyframe-0">虹色のボタン</button>
+            <div class="angle-display">--gradient-angle: 0deg</div>
+        </div>
+
+        <div class="keyframe-item">
+            <div class="keyframe-label">25%進行時</div>
+            <button class="keyframe-button keyframe-90">虹色のボタン</button>
+            <div class="angle-display">--gradient-angle: 90deg</div>
+        </div>
+
+        <div class="keyframe-item">
+            <div class="keyframe-label">50%進行時</div>
+            <button class="keyframe-button keyframe-180">虹色のボタン</button>
+            <div class="angle-display">--gradient-angle: 180deg</div>
+        </div>
+
+        <div class="keyframe-item">
+            <div class="keyframe-label">75%進行時</div>
+            <button class="keyframe-button keyframe-270">虹色のボタン</button>
+            <div class="angle-display">--gradient-angle: 270deg</div>
+        </div>
+    </div>
+</body>
+</html>

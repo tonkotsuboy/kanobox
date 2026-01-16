@@ -1,0 +1,70 @@
+.container {
+  .child {
+    color: red;
+  }
+}
+
+section {
+  h1 {
+    color: red;
+  }
+}
+
+.apple,
+.orange {
+  .text {
+    color: red;
+  }
+}
+
+.container {
+  .child1,
+  .child2 {
+    color: red;
+  }
+}
+
+.link {
+  &:hover,
+  &:active {
+    color: red;
+  }
+}
+
+.box {
+  color: blue;
+
+  @media (min-width: 800px) {
+    color: red;
+  }
+}
+
+.me {
+  border: 1px solid #333;
+
+  .grandparent & {
+    color: red;
+  }
+}
+
+/* その他 */
+
+body {
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  display: grid;
+  min-height: 100vh;
+  padding: 24px;
+  text-align: center;
+  place-content: center;
+  gap: 14px;
+}
+
+body > * {
+  display: block;
+}
+
+h1 {
+  font-size: 24px;
+}

@@ -1,0 +1,125 @@
+:root {
+  --background-start: #f0f2f5;
+  --background-end: #e6e9ed;
+  --text-color: #333;
+  --primary-color: #6a11cb;
+  --primary-color-dark: #2575fc;
+  --card-background: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --border-radius: 10px;
+  --notification-success: #28a745;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background: linear-gradient(135deg, var(--background-start), var(--background-end));
+  color: var(--text-color);
+  /* Center content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+header {
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-weight: 700;
+  color: var(--primary-color);
+  background: linear-gradient(45deg, var(--primary-color), var(--primary-color-dark));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+  background: linear-gradient(45deg, var(--primary-color), var(--primary-color-dark));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+#notification-container {
+  /* This is just a logical container for popovers, no styling needed. */
+}
+
+.notification-popover {
+  position: absolute; /* Position relative to the viewport */
+  inset: auto; /* Explicitly override user-agent centering */
+  margin: 0; /* Override user-agent margin */
+  right: 1rem;
+  /* 'top' will be set by JavaScript */
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--card-background);
+  color: var(--text-color);
+  padding: 1rem;
+  border: 1px solid #f0f2f5; /* Very light border */
+  border-radius: 8px; /* Slightly smaller radius */
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Softer, deeper shadow */
+  width: 320px;
+  text-align: left;
+  animation: slideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.notification-popover .icon-container {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--primary-color); /* Match theme color */
+}
+
+.notification-popover span {
+  font-weight: 500;
+  color: #374151; /* A slightly softer black */
+}
+
+.notification-popover.slide-out {
+  animation: slideOut 0.5s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

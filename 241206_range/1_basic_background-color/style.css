@@ -1,0 +1,21 @@
+.box {
+  height: 300px;
+}
+
+@media (width < 600px) {
+  .box {
+    background: red;
+  }
+}
+
+@media (600px <= width < 800px) {
+  .box {
+    background: blue;
+  }
+}
+
+@media (800px < width) {
+  .box {
+    background: green;
+  }
+}

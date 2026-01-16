@@ -1,0 +1,155 @@
+/* Transitionサンプル */
+.transition-sample {
+  scale: 1;
+  transition: scale 0.3s ease-out;
+
+  &:hover {
+    transition-duration: 0.8s;
+    transition-timing-function: linear(0, 1.4 35%, 0.85 55%, 1.1 75%, 0.95 90%, 1);
+    scale: 1.4;
+  }
+}
+
+/* Animationサンプル */
+.animation-sample {
+  animation: shrink 0.3s linear forwards;
+
+  &:hover {
+    animation-name: bounce-in-manual;
+    animation-duration: 0.8s;
+  }
+}
+
+@keyframes bounce-in-manual {
+  0% {
+    scale: 1;
+  }
+  35% {
+    scale: 1.56;
+  } /* 1 + (1.4-1) × 1.4 */
+  55% {
+    scale: 1.34;
+  } /* 1 + (1.4-1) × 0.85 */
+  75% {
+    scale: 1.44;
+  } /* 1 + (1.4-1) × 1.1 */
+  90% {
+    scale: 1.38;
+  } /* 1 + (1.4-1) × 0.95 */
+  100% {
+    scale: 1.4;
+  }
+}
+
+@keyframes shrink {
+  from {
+    scale: 1.4;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+
+
+/* その他のスタイル */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+
+.demo-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 694px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+@media (width < 700px) {
+  .demo-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.demo-item {
+  width: 100%;
+  max-width: 400px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 1rem;
+  text-align: center;
+}
+
+.demo-item h2 {
+  margin: 0;
+}
+
+.badge-container {
+  height: 120px;
+  display: grid;
+  place-items: center;
+  align-self: end;
+}
+
+.code-block {
+  background-color: #f5f2f0;
+  border: 1px solid #e1ddd9;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  text-align: left;
+  margin-top: 1rem;
+  place-self: start center;
+}
+
+.code-block pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.code-block code[class*="language-"] {
+  background-color: transparent;
+}
+
+.code-block pre {
+  margin: 0;
+}
+
+.code-block code {
+  font-family: "SF Mono", "Fira Code", "Menlo", monospace;
+  color: #374151;
+}
+
+/* 共通バッジスタイル */
+.new-badge {
+  background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+  color: white;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}

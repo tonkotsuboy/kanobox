@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS align-content Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="demo-container">
+      <h1><code>align-content</code>ブロックレイアウトデモ</h1>
+      <p>FlexboxやGridを使わずに、通常のブロックレイアウトで縦方向中央揃え</p>
+      <div class="code-highlight">
+        <pre><code class="language-css">.box {
+        align-content: center;
+      }</code></pre>
+      </div>
+      <section>
+        <h2><code>align-content: center + 高さ200px</code></h2>
+        <div class="box box__center">
+          <p>コンテンツ</p>
+        </div>
+        <h2><code>align-content: center + 高さ350px</code></h2>
+        <div class="box box__center tall">
+          <p>コンテンツ</p>
+        </div>
+        <h2><code>align-content: center + 複数要素</code></h2>
+        <div class="box box__center tall">
+          <p>コンテンツ</p>
+          <p>コンテンツ</p>
+        </div>
+      </section>
+      <section>
+        <h2><code>align-content: end</code></h2>
+        <div class="box box__end">
+          <p>コンテンツ</p>
+        </div>
+      </section>
+      <section>
+        <h2><code>align-content: space-between + 高さ400px</code></h2>
+        <p>均等配置されない</p>
+        <div class="box box__space-between">
+          <p>コンテンツ</p>
+          <p>コンテンツ</p>
+          <p>コンテンツ</p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

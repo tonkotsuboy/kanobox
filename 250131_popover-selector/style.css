@@ -1,0 +1,145 @@
+/* :has */
+label {
+  display: grid;
+  --selected: 0;
+  /*
+    --selectedが0のとき、2列目サイズは0
+    --selectedが1のとき、2列目サイズは24px
+  */
+  grid-template-columns: auto calc(var(--selected) * 24px);
+}
+
+label:has(:checked) {
+  /* チェック状態のとき、 --selectedが1になる  */
+  --selected: 1;
+}
+
+label .checkmark {
+  /*
+  --selectedが0のとき、透明度0、フォントサイズ0
+  --selectedが1のとき、透明度1、フォントサイズ24px
+*/
+  font-size: calc(20px * var(--selected));
+  opacity: var(--selected);
+}
+
+/* その他のスタイル */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --transition-duration: 0.25s;
+  --back-out: linear(
+    0,
+    0.1934 4.37%,
+    0.367 8.83%,
+    0.5208 13.38%,
+    0.6555 18.04%,
+    0.7714 22.82%,
+    0.8688 27.73%,
+    0.9485 32.81%,
+    1.0108 38.08%,
+    1.051 42.81%,
+    1.079 47.75%,
+    1.0951 52.97%,
+    1.0998 58.55%,
+    1.0954 63.36%,
+    1.0837 68.73%,
+    1.0119 90.98%,
+    1.0029 95.69%,
+    1
+  );
+
+  --power3-out: linear( 0, 0.1538 4.09%, 0.2926 8.29%, 0.4173 12.63%, 0.5282 17.12%, 0.6255 21.77%, 0.7099 26.61%, 0.782 31.67%, 0.8425 37%, 0.8887 42.23%, 0.9257 47.79%, 0.9543 53.78%, 0.9752 60.32%, 0.9883 67.11%, 0.9961 75%, 1 );
+
+
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f0e6ff, #fff0f5);
+  place-content: center;
+}
+
+.genre-selector {
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #4a0e78;
+}
+
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 16px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 12px 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-duration) var(--power3-out);
+  color: #4a0e78;
+  border-radius: 25px;
+  background-color: #f2e6ff;
+  box-shadow: 0 2px 4px rgba(74, 14, 120, 0.1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+label:focus-within {
+  outline: 1px solid #4a0e78;
+  outline-offset: 2px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+label:hover {
+  background-color: #e6d9ff;
+  box-shadow: 0 4px 6px rgba(74, 14, 120, 0.15);
+}
+
+input[type="checkbox"]:checked {
+  color: white;
+}
+
+input[type="checkbox"]:checked + .genre-text {
+  color: white;
+}
+
+.checkmark {
+  display: inline-block;
+  margin-left: 8px;
+  transition: all var(--transition-duration) var(--back-out);
+  color: #fff;
+}
+
+label:has(input[type="checkbox"]:checked) {
+  background-color: #8e44ad;
+}

@@ -1,0 +1,22 @@
+@property --box-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 200px;
+}
+
+.box {
+  width: var(--box-width);
+  height: 100px;
+  animation: 1s box-animation infinite alternate;
+  border: 1px solid #333;
+}
+
+@keyframes box-animation {
+  from {
+    --box-width: 200px;
+  }
+
+  to {
+    --box-width: 400px;
+  }
+}

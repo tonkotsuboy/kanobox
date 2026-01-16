@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Bounce Effect: Transition vs Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </head>
+  <body>
+    <h1>CSSだけでバウンスアニメーション: linear()</h1>
+    <div class="demo-container">
+      <div class="demo-item">
+        <h2><code>transition</code> + <code>linear()</code></h2>
+        <div class="badge-container">
+          <div class="new-badge transition-sample">NEW</div>
+        </div>
+        <div class="code-block">
+          <pre><code class="language-css">.transition-sample {
+  scale: 1;
+  transition: scale 0.3s ease-out;
+
+  &:hover {
+    scale: 1.4;
+    transition-duration: 0.8s;
+    transition-timing-function: linear(
+      0, 
+      1.4 35%, 
+      0.85 55%, 
+      1.1 75%, 
+      0.95 90%, 
+      1);
+  }
+}</code></pre>
+        </div>
+      </div>
+      <div class="demo-item">
+        <h2><code>animation</code> + <code>@keyframes</code></h2>
+        <div class="badge-container">
+          <div class="new-badge animation-sample">NEW</div>
+        </div>
+        <div class="code-block">
+          <pre><code class="language-css">.animation-sample {
+  animation: shrink 0.3s linear forwards;
+
+  &:hover {
+    animation-name: bounce-in-manual;
+    animation-duration: 0.8s;
+  }
+}
+
+@keyframes bounce-in-manual {
+  0% { scale: 1; }
+  35% { scale: 1.56; } /* 1 + (1.4-1) × 1.4 */
+  55% { scale: 1.34; } /* 1 + (1.4-1) × 0.85 */
+  75% { scale: 1.44; } /* 1 + (1.4-1) × 1.1 */
+  90% { scale: 1.38; } /* 1 + (1.4-1) × 0.95 */
+  100% { scale: 1.4; }
+}
+
+@keyframes shrink {
+  from { scale: 1.4; }
+  to { scale: 1; }
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

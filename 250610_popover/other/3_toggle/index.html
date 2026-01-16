@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Popover Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Toggle Popover Demo</h1>
+    </header>
+
+    <main>
+      <div class="button-group">
+        <button popovertarget="toggle-popover" popovertargetaction="toggle" class="button">
+          Toggle (explicit)
+        </button>
+        <button popovertarget="toggle-popover" class="button button-secondary">
+          Toggle (default)
+        </button>
+      </div>
+
+      <div id="toggle-popover" popover>
+        <h2>Toggle Popover</h2>
+        <p>
+          このpopoverは<code>popovertargetaction="toggle"</code>（または属性なし）のボタンで表示・非表示が切り替わります。
+        </p>
+        <p><code>popover="auto"</code>なので、外側をクリックしても閉じます。</p>
+      </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

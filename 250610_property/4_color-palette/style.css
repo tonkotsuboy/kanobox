@@ -1,0 +1,239 @@
+/* @property でのCSS変数定義 */
+@property --hue {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --saturation {
+  syntax: "<percentage>";
+  initial-value: 80%;
+  inherits: false;
+}
+
+@property --lightness {
+  syntax: "<percentage>";
+  initial-value: 60%;
+  inherits: false;
+}
+
+@property --counter {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+/* 基本スタイル */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #1a1a1a;
+  color: white;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 60px;
+  opacity: 0.8;
+}
+
+.demo-section {
+  margin: 60px 0;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demo-section h2 {
+  margin-bottom: 30px;
+  color: #4ecdc4;
+}
+
+/* 基本的な色相環アニメーション */
+.color-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.color-palette {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.color-palette:hover {
+  transform: scale(1.05);
+}
+
+.basic-hue {
+  background: hsl(var(--hue), 80%, 60%);
+  animation: hue-cycle 5s infinite linear;
+}
+
+@keyframes hue-cycle {
+  to {
+    --hue: 360;
+  }
+}
+
+/* 彩度・明度の組み合わせ */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+}
+
+.hue-high-sat {
+  background: hsl(var(--hue), 90%, 60%);
+  animation: hue-cycle 4s infinite linear;
+}
+
+.hue-low-sat {
+  background: hsl(var(--hue), 30%, 60%);
+  animation: hue-cycle 4s infinite linear;
+}
+
+.hue-high-light {
+  background: hsl(var(--hue), 80%, 80%);
+  animation: hue-cycle 4s infinite linear;
+  color: #333;
+}
+
+.hue-low-light {
+  background: hsl(var(--hue), 80%, 30%);
+  animation: hue-cycle 4s infinite linear;
+}
+
+/* カウンター風アニメーション */
+.counter-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.color-counter {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: hsl(var(--counter), 70%, 55%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+  animation: counter-animation 10s infinite linear;
+}
+
+.color-counter::after {
+  content: counter(my-counter);
+  counter-reset: my-counter var(--counter);
+}
+
+@keyframes counter-animation {
+  to {
+    --counter: 360;
+  }
+}
+
+/* 複数の変数を組み合わせ */
+.complex-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.color-complex {
+  width: 300px;
+  height: 200px;
+  border-radius: 30px;
+  background: hsl(var(--hue), var(--saturation), var(--lightness));
+  animation: 
+    complex-hue 8s infinite linear,
+    complex-saturation 6s infinite ease-in-out,
+    complex-lightness 4s infinite ease-in-out;
+}
+
+@keyframes complex-hue {
+  to {
+    --hue: 360;
+  }
+}
+
+@keyframes complex-saturation {
+  0%, 100% {
+    --saturation: 80%;
+  }
+  50% {
+    --saturation: 30%;
+  }
+}
+
+@keyframes complex-lightness {
+  0%, 100% {
+    --lightness: 60%;
+  }
+  50% {
+    --lightness: 80%;
+  }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .color-palette {
+    width: 150px;
+    height: 150px;
+    font-size: 1rem;
+  }
+  
+  .color-counter {
+    width: 200px;
+    height: 200px;
+    font-size: 2.5rem;
+  }
+  
+  .color-complex {
+    width: 250px;
+    height: 150px;
+  }
+  
+  .color-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+  }
+}

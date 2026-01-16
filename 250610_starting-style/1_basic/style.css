@@ -1,0 +1,67 @@
+/* --- 1. Key Animation Logic --- */
+.box {
+  transition: 0.4s allow-discrete;
+  display: none;
+  opacity: 0;
+  translate: 0 -20px;
+}
+
+.box.open {
+  display: block;
+  opacity: 1;
+  translate: 0 0;
+
+  @starting-style {
+    opacity: 0;
+    translate: 0 -20px;
+  }
+}
+
+/* --- 2. Component Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  display: grid;
+  justify-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f2f5;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  text-align: center;
+  display: grid;
+  gap: 32px;
+  align-content: start;
+}
+
+.toggle-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3;
+}
+
+.box {
+  padding: 4rem;
+  background-color: #e9f5ff;
+  border: 1px solid #bce0ff;
+  border-radius: 8px;
+  color: #004085;
+}

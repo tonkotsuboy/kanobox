@@ -1,0 +1,149 @@
+
+.text-container {
+  width: max(200px, 30svw);
+  padding: 24px 0;
+  text-align: center;
+  container-type: inline-size;
+}
+
+.text {
+  font-size: 20cqw;
+}
+
+/* その他のスタイル */
+
+.main-visual {
+  height: 100svh;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+  "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+.main-visual {
+  display: grid;
+  color: white;
+  background-image: url("https://assets.codepen.io/221808/kyoto_bg.jpg");
+  background-position: center;
+  background-size: cover;
+  place-content: center;
+}
+
+.main-visual,
+.main-visual * {
+  margin: 0;
+}
+
+.text-container {
+  border-top: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+}
+
+.text {
+  font-family: "Sawarabi Mincho", serif;
+}
+
+/* 以下、下層ページのレイアウト */
+
+/* ヘッダーのスタイル */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 10px;
+  color: #fff;
+  background-color: #333;
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 16px;
+}
+
+nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* メインセクションのスタイル */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 10px;
+}
+
+h2 {
+  font-family: "Sawarabi Mincho", serif;
+  margin-top: 0;
+}
+
+section:not(:first-child) {
+  margin-top: 50px;
+}
+
+section ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+section li {
+  width: 100%;
+}
+
+section li img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+section li h3 {
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+section li p {
+  margin-top: 10px;
+}
+
+section li a {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+}
+
+section li a:hover {
+  background-color: #666;
+}
+
+footer {
+  display: grid;
+  padding: 12px;
+  text-align: center;
+  place-content: center;
+}
+
+/* じっくりコトコト古都巡りってかwww */

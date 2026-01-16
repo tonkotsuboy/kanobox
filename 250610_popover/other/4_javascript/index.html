@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript API Popover Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>JavaScript API Popover Demo</h1>
+    </header>
+
+    <main>
+      <div class="button-group">
+        <button id="show-btn" class="button">Show</button>
+        <button id="hide-btn" class="button button-secondary">Hide</button>
+        <button id="toggle-btn" class="button">Toggle</button>
+      </div>
+
+      <div id="js-popover" popover>
+        <h2>JS Controlled Popover</h2>
+        <p>
+          このpopoverはJavaScriptの<code>showPopover()</code>, <code>hidePopover()</code>,
+          <code>togglePopover()</code>メソッドで制御されています。
+        </p>
+      </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

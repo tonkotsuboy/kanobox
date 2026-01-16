@@ -1,0 +1,11 @@
+.box:has(img) {
+  background-color: lightcoral;
+}
+
+/* その他のスタイル */
+
+.box {
+  padding: 8px;
+  border: 1px solid #989898;
+  margin-block: 24px;
+}

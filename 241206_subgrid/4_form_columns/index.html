@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    rel="stylesheet"
+  />
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Inquiry</title>
+  <link href="./style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="app">
+  <div class="wrapper">
+    <main>
+      <div class="item">
+        <label class="required" for="name">氏名 </label>
+        <div class="input-wrapper">
+          <input id="name" required type="text"/>
+          <div class="error-message">入力されていません</div>
+        </div>
+      </div>
+      <div class="item">
+        <label class="optional" for="company">会社</label>
+        <div class="input-wrapper">
+          <input id="company" type="text"/>
+        </div>
+      </div>
+      <div class="item">
+        <label class="required" for="mailaddress">メールアドレス </label>
+        <div class="input-wrapper">
+          <input id="mailaddress" required type="email"/>
+          <div class="error-message">
+            メールアドレスの形式が正しくありません
+          </div>
+        </div>
+      </div>
+      <button type="button">送信する</button>
+    </main>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+/* @property でのCSS変数定義 */
+@property --gradient-position {
+  syntax: "<percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@property --slow-gradient-position {
+  syntax: "<percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+@property --fast-gradient-position {
+  syntax: "<percentage>";
+  initial-value: 100%;
+  inherits: false;
+}
+
+/* 基本スタイル */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  color: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 60px;
+  opacity: 0.9;
+  color: #94a3b8;
+}
+
+.demo-section {
+  margin: 60px 0;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+/* メインのグラデーションテキスト */
+.gradient-text {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 10%,
+    #6366f1 20%,
+    #8b5cf6 30%,
+    #d946ef 40%,
+    #ec4899 50%,
+    #f97316 60%,
+    #eab308 70%,
+    #22c55e 80%,
+    transparent 90%,
+    transparent 100%
+  );
+  background-size: 400% 100%;
+  background-position: var(--gradient-position) 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-flow 4s infinite linear;
+}
+
+@keyframes text-flow {
+  to {
+    --gradient-position: -100%;
+  }
+}
+
+/* スローアニメーション */
+.gradient-text-slow {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 10%,
+    #8b5cf6 25%,
+    #d946ef 50%,
+    #06b6d4 75%,
+    transparent 90%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-position: var(--slow-gradient-position) 0;
+  background-clip: text;
+  color: transparent;
+  animation: slow-flow 6s infinite linear;
+}
+
+@keyframes slow-flow {
+  to {
+    --slow-gradient-position: -100%;
+  }
+}
+
+/* ファストアニメーション */
+.gradient-text-fast {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 10%,
+    #f97316 25%,
+    #eab308 50%,
+    #22c55e 75%,
+    transparent 90%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-position: var(--fast-gradient-position) 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: fast-flow 2s infinite linear;
+}
+
+@keyframes fast-flow {
+  to {
+    --fast-gradient-position: -100%;
+  }
+}
+
+/* 様々なグラデーションの例 */
+.text-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.text-examples > div {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.text-examples > div:hover {
+  transform: translateY(-5px);
+}
+
+.gradient-text-rainbow {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 10%,
+    #6366f1 20%,
+    #8b5cf6 35%,
+    #d946ef 50%,
+    #ec4899 65%,
+    #f97316 80%,
+    transparent 90%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-position: var(--gradient-position) 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-flow 3.5s infinite linear;
+}
+
+.gradient-text-sunset {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 10%,
+    #f97316 25%,
+    #eab308 40%,
+    #fbbf24 55%,
+    #f59e0b 70%,
+    transparent 90%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-position: var(--gradient-position) 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-flow 4s infinite linear;
+}
+
+.gradient-text-ocean {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 10%,
+    #0ea5e9 25%,
+    #06b6d4 40%,
+    #22d3ee 55%,
+    #67e8f9 70%,
+    transparent 90%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-position: var(--gradient-position) 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-flow 3.2s infinite linear;
+}
+
+.gradient-text-forest {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 10%,
+    #22c55e 25%,
+    #16a34a 40%,
+    #15803d 55%,
+    #166534 70%,
+    transparent 90%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-position: var(--gradient-position) 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-flow 4.5s infinite linear;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .gradient-text {
+    font-size: 2.5rem;
+  }
+  
+  .gradient-text-slow,
+  .gradient-text-fast {
+    font-size: 2rem;
+  }
+  
+  .text-examples {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+  }
+  
+  .text-examples > div {
+    font-size: 1.4rem;
+    padding: 15px;
+  }
+}

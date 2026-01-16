@@ -1,0 +1,28 @@
+.logo {
+  /* 背景グラデーション */
+  background: linear-gradient(-45deg, #2af598, #009efd);
+  /* テキストの形に背景を切り抜く */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* テキストの色は透明にする */
+  color: transparent;
+}
+
+/* そのほかのCSS */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  display: grid;
+  text-align: center;
+  place-content: center;
+}
+
+.logo {
+  font-size: 50px;
+  font-family: "Comfortaa", cursive;
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear() Bounce Capture Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>linear()関数バウンスアニメーション - キャプチャー用</h1>
+    <p>transition + linear()のバウンス効果の各段階を静的に表示</p>
+    
+    <div class="demo-container">
+      <div class="demo-item">
+        <h3>0%</h3>
+        <div class="badge-container">
+          <div class="new-badge scale-0">NEW</div>
+        </div>
+      </div>
+      
+      <div class="demo-item">
+        <h3>35%</h3>
+        <div class="badge-container">
+          <div class="new-badge scale-35">NEW</div>
+        </div>
+      </div>
+      
+      <div class="demo-item">
+        <h3>55%</h3>
+        <div class="badge-container">
+          <div class="new-badge scale-55">NEW</div>
+        </div>
+      </div>
+      
+      <div class="demo-item">
+        <h3>75%</h3>
+        <div class="badge-container">
+          <div class="new-badge scale-75">NEW</div>
+        </div>
+      </div>
+      
+      <div class="demo-item">
+        <h3>90%</h3>
+        <div class="badge-container">
+          <div class="new-badge scale-90">NEW</div>
+        </div>
+      </div>
+      
+      <div class="demo-item">
+        <h3>100%</h3>
+        <div class="badge-container">
+          <div class="new-badge scale-100">NEW</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="formula">
+      <h2>linear()関数の各段階</h2>
+      <code>linear(0, 1.4 35%, 0.85 55%, 1.1 75%, 0.95 90%, 1)</code>
+      <p>最終値scale(1.4)に対して、linear()の値を乗算した結果</p>
+    </div>
+  </body>
+</html>

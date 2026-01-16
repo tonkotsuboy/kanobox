@@ -1,0 +1,124 @@
+/* ベーススタイル */
+body,
+html {
+  font-family: "Arial", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex; /* 横並び配置 */
+  height: 100vh; /* 画面の高さに合わせる */
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* メニュー幅 */
+  border-right: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-link {
+  font-weight: bold;
+  display: flex; /* アイコンとテキストを横並びに */
+  align-items: center;
+  padding: 1rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-link .material-icons {
+  font-size: 1.5rem;
+  margin-right: 10px; /* アイコンとテキストの間隔 */
+  color: #666; /* アイコン色 */
+}
+
+.menu-link:is(:hover, :focus) {
+  color: #0078d4;
+  background-color: #f0f0f0;
+
+  .material-icons {
+    color: currentColor; /* ホバー時のアイコン色変更 */
+  }
+}
+
+/* サブメニューがある項目に三角アイコンを表示 */
+.menu-item:has(.submenu) > .menu-link::after {
+  font-family: "Material Icons"; /* Material Iconsフォント指定 */
+  font-size: 1.5rem;
+  margin-left: auto; /* テキストとアイコンを分離 */
+  content: "chevron_right"; /* 三角アイコン */
+  color: #666; /* アイコン色 */
+}
+
+.menu-item:has(.submenu) > .menu-link:is(:hover, :focus)::after {
+  color: #0078d4;
+}
+
+/* サブメニュー */
+.submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  min-width: 200px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.submenu-link {
+  display: block;
+  padding: 0.8rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  text-decoration: none;
+  color: #333;
+}
+
+.submenu-link:hover,
+.submenu-link:focus {
+  color: #0078d4;
+  background-color: #f0f0f0;
+}
+
+.menu-item:hover .submenu,
+.menu-item:focus-within .submenu {
+  display: block;
+}
+
+/* メインコンテンツエリア */
+.main-content {
+  display: flex;
+  align-items: center;
+  flex: 1; /* メインコンテンツをメニュー以外の幅に */
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.main-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

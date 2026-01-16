@@ -1,0 +1,202 @@
+
+.dialog {
+  overflow: initial;
+  width: 800px;
+  height: 530px;
+  margin: auto;
+  padding: 8px;
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+
+/* dialogが開いたときのスタイル*/
+.dialog[open] {
+  opacity: 1;
+  scale: 1;
+
+  /* dialogが開く前のスタイル*/
+  @starting-style {
+    opacity: 0;
+    scale: 0.8;
+  }
+}
+
+.dialog {
+  /* .dialogが閉じ終わったときのスタイル */
+  transition: scale 0.25s allow-discrete,
+  opacity 0.25s allow-discrete,
+  overlay 0.25s allow-discrete,
+  display 0.25s allow-discrete;
+  opacity: 0;
+  /* transitionの設定 */
+  scale: 0.8;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dialog .dialog-inner {
+  position: fixed;
+  width: 800px;
+  height: auto;
+  margin: auto;
+  padding: 8px;
+  color: white;
+  aspect-ratio: 16/10;
+  inset: 0;
+}
+
+.image-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.image-description {
+  text-align: center;
+}
+
+.dialog .image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.dialog-button {
+  font-size: 0.875rem;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  background-color: #32b39c;
+  background-image: linear-gradient(to right, #32b39c, #098bc3);
+  background-position: 100% 0;
+  background-size: cover;
+}
+
+.close-button {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+html {
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.navigation {
+  height: 80px;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* そのほかのCSS */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --base-color: #e8faff;
+  --main-color: #087c98;
+}
+
+html {
+  font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #333333;
+}
+
+body {
+  line-height: 1.7;
+  padding-top: 80px;
+}
+
+button {
+  font-family: "Lato", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.navigation {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  background-color: var(--main-color);
+  grid-auto-flow: column;
+}
+
+.brand-logo {
+  display: grid;
+  width: 80px;
+  height: 80px;
+  background-image: linear-gradient(to right, #32b39c 0%, #098bc3 100%);
+  place-content: center;
+}
+
+.link-list {
+  font-size: 18px;
+  display: grid;
+  justify-content: end;
+  padding-right: 24px;
+  grid-auto-flow: column;
+  gap: 30px;
+}
+
+.link-list a {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+section {
+  display: grid;
+  height: calc(100svh - 80px);
+  place-content: center;
+  place-items: center;
+  gap: 24px;
+}
+
+.profile {
+  background: var(--base-color) url(./images/profile_title_bg.svg) no-repeat
+    center 0;
+}
+
+.gallery {
+  background: #fff url(./images/gallely_title_bg.svg) no-repeat center 0;
+}
+
+.blog {
+  background: var(--base-color) url(./images/blog_title_bg.svg) no-repeat center
+    0;
+}

@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (width < 600px) {
+  .container {
+    flex-direction: column;
+  }
+}

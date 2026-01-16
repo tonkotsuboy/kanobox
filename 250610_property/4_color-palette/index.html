@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カラーパレットアニメーション - @property Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Color Palette Animation</h1>
+    <p class="subtitle">@propertyでHSL色空間の色相をアニメーション</p>
+    
+    <section class="demo-section">
+      <h2>基本的な色相環アニメーション</h2>
+      <div class="color-demo">
+        <div class="color-palette basic-hue"></div>
+        <p>色相（H）が0-360度で変化</p>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>複数のパターン</h2>
+      <div class="color-grid">
+        <div class="color-palette hue-high-sat">
+          <span>高彩度</span>
+        </div>
+        <div class="color-palette hue-low-sat">
+          <span>低彩度</span>
+        </div>
+        <div class="color-palette hue-high-light">
+          <span>高明度</span>
+        </div>
+        <div class="color-palette hue-low-light">
+          <span>低明度</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

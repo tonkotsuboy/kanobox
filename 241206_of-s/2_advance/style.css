@@ -1,0 +1,103 @@
+tr:nth-child(even of :not([hidden])) {
+  background: #efeeee;
+}
+
+/*tr:nth-child(even of :not([hidden])) {*/
+/*  background: #efeeee;*/
+/*}*/
+
+/* その他のコード */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100dvh;
+}
+
+body {
+  font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.6;
+  color: #000000;
+  background: linear-gradient(112deg, #fff886 0%, #f072b6 100dvh);
+}
+
+.app {
+  display: grid;
+  padding-block: 40px;
+  grid-template-columns:
+    [app-start] minmax(8px, 1fr) [content-start] minmax(auto, 930px)
+    [content-end] minmax(8px, 1fr) [app-end];
+  row-gap: 24px;
+}
+
+.app > * {
+  grid-column: content;
+}
+
+h1 {
+  font-family: "Rum Raisin", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%; /* 60px */
+  text-align: center;
+  letter-spacing: 3.2px;
+  color: #4b3033;
+}
+
+select {
+  width: 120px;
+  height: 40px;
+  justify-self: center;
+}
+
+.gender::before {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  content: "";
+  border-radius: 9999px;
+}
+
+[data-type="female"] .gender::before {
+  background-color: #fab9d0;
+}
+
+[data-type="male"] .gender::before {
+  background-color: #c0c5ef;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  background-color: white;
+
+  @media (width < 600px) {
+    font-size: 14px;
+  }
+}
+
+table thead {
+  color: white;
+  background-color: #4b3033;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: middle;
+  padding-inline: 24px;
+
+  @media (width < 600px) {
+    padding-inline: 8px;
+  }
+}
+
+table tr {
+  height: 55px;
+}

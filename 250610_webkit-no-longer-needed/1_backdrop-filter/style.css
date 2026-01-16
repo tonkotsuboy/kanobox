@@ -1,0 +1,67 @@
+.notification {
+  background-color: rgba(255, 255, 255, 0.35);
+  /* 
+      全ブラウザで-webkit-backdrop-filter不要💐
+      2024年9月リリースのSafari 18から
+    */
+  backdrop-filter: blur(10px) saturate(120%);
+}
+
+/* そのほかのCSS */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, sans-serif;
+  line-height: 1.9;
+}
+
+main {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+main > * {
+  height: 100dvh;
+  display: grid;
+  background-color: #56002f;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  gap: 24px;
+  place-items: center;
+  align-content: center;
+  padding: 16px;
+}
+
+.sample1 {
+  background-image: url("./images/bg1.webp");
+}
+
+.sample2 {
+  background-image: url("./images/bg2.jpg");
+}
+
+.sample3 {
+  background-image: url("./images/bg3.jpg");
+}
+
+.notification {
+  width: min(500px, 100%);
+  padding: 40px 24px;
+  border-radius: 12px;
+
+  p {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &.notification__no-filter {
+    backdrop-filter: none;
+  }
+}

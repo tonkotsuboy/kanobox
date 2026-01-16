@@ -1,0 +1,203 @@
+:root {
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --text-color: #374151;
+  --background-color: #f9fafb;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --border-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  background-image:
+    radial-gradient(circle at 100% 100%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 0% 0%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.new-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  background-color: #10b981;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.demos {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.demo-section {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--primary-color);
+  pointer-events: none;
+}
+
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  appearance: none;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* デモ1: hrタグによる区切り */
+select hr {
+  border: none;
+  border-top: 1px dashed var(--border-color);
+  margin: 4px 0;
+}
+
+/* デモ2: optgroupによるグループ化 */
+.optgroup-styling optgroup {
+  font-weight: 700;
+  color: var(--primary-color);
+  background-color: #f1f5f9;
+}
+
+.optgroup-styling option {
+  font-weight: normal;
+  padding: 8px 0;
+}
+
+/* デモ3: datalistによる提案機能 */
+.datalist-styling {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.datalist-styling:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* 注釈テキスト */
+.demo-note {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .demo-section {
+    padding: 1rem;
+  }
+}

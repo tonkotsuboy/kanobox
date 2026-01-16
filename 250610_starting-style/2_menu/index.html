@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS @starting-style & transition-behavior Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1><code>@starting-style</code> & <code>transition-behavior</code></h1>
+      <p>CSSだけで<code>display: none</code>からの出現アニメーションを実装するデモです。</p>
+
+      <div class="demo-area">
+        <input type="checkbox" id="toggle-box" class="toggle-input" />
+        <label for="toggle-box" class="toggle-label">Toggle Menu</label>
+
+        <div class="menu">
+          <ul>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

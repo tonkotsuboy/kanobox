@@ -1,0 +1,107 @@
+:root {
+  --background-start: #f0f2f5;
+  --background-end: #e6e9ed;
+  --text-color: #333;
+  --primary-color: #6a11cb;
+  --primary-color-dark: #2575fc;
+  --card-background: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background: linear-gradient(135deg, var(--background-start), var(--background-end));
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-weight: 700;
+  color: var(--primary-color);
+  background: linear-gradient(45deg, var(--primary-color), var(--primary-color-dark));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+  background: linear-gradient(45deg, var(--primary-color), var(--primary-color-dark));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+[popover] {
+  background: var(--card-background);
+  padding: 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 30px var(--shadow-color);
+  width: min(300px, 90vw);
+  text-align: left;
+
+  /* Reset default popover centering to allow JS positioning */
+  inset: unset;
+  margin: 0;
+}
+
+[popover] h2 {
+  margin-top: 0;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+[popover] p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+[popover] button {
+  display: block;
+  margin-left: auto;
+  background: #eee;
+  color: #555;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+[popover] button:hover {
+  background: #e0e0e0;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.button-secondary {
+  background: #6c757d;
+}

@@ -1,0 +1,118 @@
+body {
+  font-family: "Inter", sans-serif;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  min-height: 100vh;
+  text-align: center;
+  margin: 0;
+  background: white;
+  padding: 2rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+h1 + p {
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.demo-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 4rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.demo-item {
+  display: grid;
+  gap: 2rem;
+}
+
+.demo-item h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.badge-container {
+  height: 120px;
+  display: grid;
+  place-items: center;
+}
+
+/* Base badge styles */
+.new-badge {
+  background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+  color: white;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: grid;
+  place-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Scale variations for each stage - exaggerated for better visibility */
+.scale-0 {
+  transform: scale(0.8); /* 0% - 開始時は小さく */
+}
+
+.scale-35 {
+  transform: scale(1.8); /* 35% - 大きくオーバーシュート */
+}
+
+.scale-55 {
+  transform: scale(1.0); /* 55% - 縮んで戻る */
+}
+
+.scale-75 {
+  transform: scale(1.4); /* 75% - 再び膨らむ */
+}
+
+.scale-90 {
+  transform: scale(1.1); /* 90% - 少し縮む */
+}
+
+.scale-100 {
+  transform: scale(1.2); /* 100% - 最終的なサイズに落ち着く */
+}
+
+.formula {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formula h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #495057;
+}
+
+.formula code {
+  background: #e9ecef;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: "SF Mono", "Fira Code", "Menlo", monospace;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 1rem;
+  word-break: break-all;
+}
+
+.formula p {
+  margin-bottom: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:has() Demo - Email Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>:has() デモ - フォームバリデーション</h1>
+        
+        <form class="form">
+            <div class="item">
+                <label for="name">氏名 *</label>
+                <input type="text" id="name" required>
+            </div>
+            
+            <div class="item">
+                <label for="email">メールアドレス *</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="item">
+                <label for="phone">電話番号</label>
+                <input type="tel" id="phone">
+            </div>
+            
+            <div class="item">
+                <label for="message">メッセージ *</label>
+                <textarea id="message" required></textarea>
+            </div>
+            
+            <button type="submit">送信</button>
+        </form>
+    </div>
+</body>
+</html>

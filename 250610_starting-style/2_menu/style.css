@@ -1,0 +1,139 @@
+/* --- Key Animation Logic --- */
+
+.menu {
+  /* 表示された後の最終的なスタイル (アニメーションの終点) */
+  opacity: 1;
+  transform: translateY(0);
+
+  /* 
+    1. トランジションの定義
+    `allow-discrete`でdisplayプロパティのアニメーションを有効化
+  */
+  transition:
+    opacity 0.3s,
+    transform 0.3s,
+    display 0.3s allow-discrete;
+}
+
+/* 
+  2. 表示される瞬間のスタイルを定義
+  `@starting-style`は、要素が表示ツリーに追加された直後のスタイルを指定します。
+  これがフェードインアニメーションの「開始点」となります。
+*/
+@starting-style {
+  .toggle-input:checked ~ .menu {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* 
+  3. 非表示の状態を定義
+  デフォルトでは`display: none`で非表示にします。
+  これがフェードアウトアニメーションの「終了点」となり、
+  かつ次のフェードインの「開始点」ともなります。
+*/
+.toggle-input:not(:checked) ~ .menu {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* --- Other Component Styles --- */
+
+/* General Setup */
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #1a202c;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.demo-area {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.toggle-label:hover {
+  transform: translateY(-2px);
+  background-color: #4338ca;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #1a202c;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.menu a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Explanation Box */
+.explanation {
+  margin-top: 2rem;
+  background-color: #e9ecef;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.explanation h3 {
+  margin-top: 0;
+}
+.explanation code {
+  background-color: #d8dee4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* --- Other Component Styles --- */
+
+.menu {
+  /* レイアウトと視覚的なスタイル */
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 200px;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,125 @@
+.rainbow-button {
+    border: none;
+    background: conic-gradient(
+      hsl(0, 99%, 57%) 0%,
+      hsl(90, 99%, 57%) 25%,
+      hsl(180, 99%, 57%) 50%,
+      hsl(270, 99%, 57%) 75%,
+      hsl(360, 99%, 57%) 100%
+    );
+  }
+  
+  .rainbow-border-button {
+    border: 6px solid transparent;
+    background: linear-gradient(navy) padding-box,
+      conic-gradient(
+          hsl(0, 99%, 57%) 0%,
+          hsl(90, 99%, 57%) 25%,
+          hsl(180, 99%, 57%) 50%,
+          hsl(270, 99%, 57%) 75%,
+          hsl(360, 99%, 57%) 100%
+        )
+        border-box;
+    color: white;
+  }
+  
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  @keyframes gradient-angle {
+    to {
+      --gradient-angle: 360deg;
+    }
+  }
+  
+  .rainbow-button-animation {
+    border: none;
+    animation: 2s gradient-angle infinite linear;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      hsl(0, 99%, 57%) 0%,
+      hsl(90, 99%, 57%) 25%,
+      hsl(180, 99%, 57%) 50%,
+      hsl(270, 99%, 57%) 75%,
+      hsl(360, 99%, 57%) 100%
+    );
+  }
+  
+  .rainbow-border-animation {
+    border: 6px solid transparent;
+    animation: 2s gradient-angle infinite linear;
+    background: linear-gradient(navy, navy) padding-box,
+      conic-gradient(
+          from var(--gradient-angle),
+          hsl(0, 99%, 57%) 0%,
+          hsl(90, 99%, 57%) 25%,
+          hsl(180, 99%, 57%) 50%,
+          hsl(270, 99%, 57%) 75%,
+          hsl(360, 99%, 57%) 100%
+        )
+        border-box;
+    color: white;
+  }
+  
+  body {
+    font-family: "游ゴシック Medium", YuGothic, YuGothicM,
+      "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #000000;
+    padding: 24px;
+  }
+  
+  .container {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-items: center;
+    max-width: 800px;
+    margin-inline: auto;
+  }
+  
+  .container > section {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    row-gap: 12px;
+  }
+  
+  section {
+    display: grid;
+    gap: 8px;
+  }
+  
+  button {
+    background: none;
+    width: 300px;
+    height: 80px;
+    border-radius: 99999px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  
+  h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  ul {
+    display: grid;
+    padding-left: 1rem;
+  }
+  
+  ul li {
+    list-style: circle;
+  }
+  
